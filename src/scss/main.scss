@@ -1,0 +1,547 @@
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+
+$subcolor: #007ab7;
+$secondcolor: #9acde7;
+$accentcolor: #da5019;
+$taikaicolor: #E8868F;
+$genrecolor: #E5B3B8;
+$reikaicolor: #FFBB00;
+$webcolor: #E67928;
+$tvcolor: #73C11D;
+$tvbackcolor: #A5BF87;
+$schoolcolor: #96C487;
+$schoolbackcolor: #B4EAA1;
+$reportedcolor: #69ABDB;
+$othercolor: #8ED1E0;
+.popover {
+  max-width: 600px;
+  /* この数字を変える */
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.string-emphasized-necessary {
+  color: #ff0000;
+}
+
+.string-emphasized-recommended {
+  color: #0000ff;
+}
+
+.item-title {
+  @extend .col-2;
+  font-weight: bold;
+  background-color: $secondcolor;
+}
+
+.item {
+  @extend .col-12;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  border-width: 0.5em;
+}
+
+h1 {
+  @extend .col-12, .px-0, .py-2;
+  color: $subcolor;
+  /*文字色*/
+  border: solid 3px $subcolor;
+  /*線色*/
+  padding: 0.5em;
+  /*文字周りの余白*/
+  border-radius: 0.5em;
+  /*角丸*/
+}
+
+h2 {
+  @extend .col-12, .py-2;
+  color: $subcolor;
+  /*文字色*/
+  border-top: solid 3px $subcolor;
+  /*上線*/
+  border-bottom: solid 3px $subcolor;
+  /*下線*/
+}
+
+h3.topinfo {
+  @extend .col-12, .py-1, .my-1;
+  color: $subcolor;
+  /*文字色*/
+  background: transparent;
+  /*背景透明に*/
+  border-left: solid 5px $subcolor;
+  font-size: 1rem;
+}
+
+h3 {
+  @extend .col-12, .py-1;
+  color: $subcolor;
+  /*文字色*/
+  background: transparent;
+  /*背景透明に*/
+  border-left: solid 5px $subcolor;
+  /*左線*/
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.remark {
+  @extend .my-2, .p-3;
+  border: 2px solid #da4033;
+  border-radius: 4px;
+  padding: 1em;
+  position: relative;
+
+  &::before {
+    background-color: #fff;
+    color: #da4033;
+    content: "注意";
+    font-weight: bold;
+    left: 1em;
+    padding: 0 0.5em;
+    position: absolute;
+    top: -1em;
+  }
+}
+
+.example {
+  @extend .my-2, .p-3;
+  border: 2px solid $subcolor;
+  border-radius: 4px;
+  padding: 1em;
+  position: relative;
+
+  &::before {
+    background-color: #fff;
+    color: $subcolor;
+    content: "例";
+    font-weight: bold;
+    left: 1em;
+    padding: 0 0.5em;
+    position: absolute;
+    top: -1em;
+  }
+}
+
+.recommend {
+  @extend .col-12, .my-2, .p-3;
+  border: 2px solid $subcolor;
+  border-radius: 4px;
+  padding: 1em;
+  position: relative;
+
+  &::before {
+    background-color: #fff;
+    color: $subcolor;
+    content: "推奨";
+    font-weight: bold;
+    left: 1em;
+    padding: 0 0.5em;
+    position: absolute;
+    top: -1em;
+  }
+}
+
+.recommend-provisional {
+  @extend .col-12, .my-2, .p-3;
+  border: 2px solid $secondcolor;
+  border-radius: 4px;
+  padding: 1em;
+  position: relative;
+
+  &::before {
+    background-color: #fff;
+    color: $subcolor;
+    content: "推奨(暫定)";
+    font-weight: bold;
+    left: 1em;
+    padding: 0 0.5em;
+    position: absolute;
+    top: -1em;
+  }
+}
+
+.merit {
+  @extend .my-2, .p-3;
+  border: 2px solid $subcolor;
+  border-radius: 4px;
+  padding: 1em;
+  position: relative;
+
+  &::before {
+    background-color: #fff;
+    color: $subcolor;
+    content: "メリット";
+    font-weight: bold;
+    left: 1em;
+    padding: 0 0.5em;
+    position: absolute;
+    top: -1em;
+  }
+}
+
+.quote {
+  @extend .col-11, .offset-1, .my-2, .p-3;
+  border: 2px solid #494949;
+  border-radius: 4px;
+  position: relative;
+}
+
+.index {
+  @extend .col-6, .p-2, .my-3;
+  border: 2px solid $secondcolor;
+  position: relative;
+
+  &::before {
+    background-color: #fff;
+    color: #000;
+    content: "目次";
+    font-weight: bold;
+    left: 1em;
+    padding: 0 0.5em;
+    position: absolute;
+    top: -1em;
+  }
+}
+
+.schedule {
+  &-container {
+    @extend .col-12;
+    border: 2px solid $subcolor;
+  }
+
+  &-row {
+    @extend .col-12;
+    border-bottom: 2px solid $subcolor;
+  }
+
+  &-item {
+    @extend .px-0,.py-1;
+    font-weight: bold;
+    height: 100%;
+    text-align: center;
+  }
+
+  &-content {
+    @extend .px-0;
+    height: 100%;
+
+    .title {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .category {
+      text-align: center;
+      background-color: $subcolor;
+      color: white;
+    }
+  }
+
+  &-section {
+    @extend .py-1, .col-12;
+    font-size: 1rem;
+    font-weight: bold;
+    border-top: 2px solid $subcolor;
+    border-bottom: 2px solid $subcolor;
+  }
+
+  &-category {
+    @extend .py-1, .col-12;
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: 2px solid $subcolor;
+    background-color: $secondcolor;
+  }
+
+  &-no_result {
+    background-color: #666;
+    color: #fff;
+    text-align: center;
+  }
+
+  &-genre_limited {
+    background-color: $accentcolor;
+    color: #fff;
+    text-align: center;
+  }
+
+  &-entry_arbitrary {
+    background-color: $accentcolor;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+header {
+  .title {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+    background-color: $secondcolor;
+  }
+
+  .subtitle {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: $subcolor;
+  }
+
+  .subtitle a {
+    color: inherit;
+    text-decoration: none;
+
+    &:link {
+      color: #fff;
+    }
+  }
+
+  .title a {
+    color: inherit;
+    text-decoration: none;
+
+    &:link {
+      color: #fff;
+    }
+  }
+
+  .smalltitle {
+    background-color: $secondcolor;
+    font-size: 1.5rem;
+  }
+}
+
+footer {
+  @extend .row, .justify-content-center;
+  background-color: $secondcolor;
+}
+
+.information {
+  .result-title {
+    font-size: 1.5rem;
+  }
+}
+
+.sc-list-item {
+  background-color: $secondcolor;
+  text-align: center;
+  font-weight: bold;
+}
+
+.sc-competition {
+  background-color: $accentcolor;
+}
+
+.sc-list-row {
+  @extend .row, .my-2;
+  border: 1px solid black;
+}
+
+.result {
+  &-container {
+    @extend .col-12;
+    border: 2px solid $subcolor;
+  }
+
+  &-row {
+    @extend .col-12;
+    border-bottom: 2px solid $subcolor;
+  }
+
+  &-item {
+    @extend .px-0,.py-1;
+    font-weight: bold;
+    height: 100%;
+    text-align: center;
+  }
+
+  &-content {
+    @extend .px-0;
+    height: 100%;
+
+    .title {
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    .category {
+      text-align: center;
+      background-color: $subcolor;
+      color: white;
+    }
+  }
+
+  &-section {
+    @extend .py-1, .col-12;
+    font-size: 1rem;
+    font-weight: bold;
+    border-top: 2px solid $subcolor;
+    border-bottom: 2px solid $subcolor;
+  }
+
+  &-category {
+    @extend .py-1, .col-12;
+    font-size: 1rem;
+    font-weight: bold;
+    border-bottom: 2px solid $subcolor;
+    background-color: $secondcolor;
+  }
+
+  &-no_result {
+    background-color: #666;
+    color: #fff;
+    text-align: center;
+  }
+
+  &-genre_limited {
+    background-color: $accentcolor;
+    color: #fff;
+    text-align: center;
+  }
+
+  &-entry_arbitrary {
+    background-color: $accentcolor;
+    color: #fff;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+@mixin top-schedule-category {
+  font-weight: bold;
+  text-align: center;
+}
+
+.centering {
+  text-align: center;
+}
+
+.table-result {
+  tr {
+    @extend .row;
+  }
+}
+
+.top-schedule {
+  table-layout:fixed;
+
+  a {
+    color: #000000;
+  }
+
+  tr {
+    .centering {
+      text-align: center;
+    }
+    .taikai {
+      @include top-schedule-category;
+      background-color: $taikaicolor;
+    }
+    .genre {
+      @include top-schedule-category;
+      background: repeating-linear-gradient(45deg, $genrecolor, $genrecolor 20px, $taikaicolor 0, $taikaicolor 40px);
+    }
+    .reikai {
+      @include top-schedule-category;
+      background: $reikaicolor;
+    }
+    .web {
+      @include top-schedule-category;
+      background: $webcolor;
+    }
+    .tv {
+      @include top-schedule-category;
+      background: $tvcolor;
+    }
+    .fes {
+      @include top-schedule-category;
+      background: $schoolcolor;
+    }
+    .other {
+      @include top-schedule-category;
+      background-color: $othercolor;
+    }
+    .reported {
+      @include top-schedule-category;
+      background-color: $reportedcolor;
+    }
+    .no-report {
+      @include top-schedule-category;
+      background-color: #ccc;
+    }
+  }
+  .category {
+    width: 3rem;
+  }
+  .report {
+    width: 3rem;
+  }
+  .date {
+    width: 4rem;
+  }
+  .region {
+    width: 4rem;
+  }
+  .title {
+    width: 9rem;
+  }
+  .place {
+    width: 9rem;
+  }
+  .organizer {
+    width: 9rem;
+  }
+}
+
+.centering {
+  text-align: center;
+}
+.taikai {
+  @include top-schedule-category;
+  background-color: $taikaicolor;
+}
+.genre {
+  @include top-schedule-category;
+  background: repeating-linear-gradient(45deg, $genrecolor, $genrecolor 20px, $taikaicolor 0, $taikaicolor 40px);
+}
+.reikai {
+  @include top-schedule-category;
+  background: $reikaicolor;
+}
+.web {
+  @include top-schedule-category;
+  background: $webcolor;
+}
+.tv {
+  @include top-schedule-category;
+  background: $tvcolor;
+}
+.fes {
+  @include top-schedule-category;
+  background: $schoolcolor;
+}
+.other {
+  @include top-schedule-category;
+  background-color: $othercolor;
+}
+.reported {
+  @include top-schedule-category;
+  background-color: $reportedcolor;
+}
+.no-report {
+  @include top-schedule-category;
+  background-color: #ccc;
+}
